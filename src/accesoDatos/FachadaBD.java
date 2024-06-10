@@ -16,7 +16,7 @@ public class FachadaBD {
     
     FachadaBD(){
         url = "jdbc:postgresql://localhost:5432/Mensajeria";
-        usuario = "jean";
+        usuario = "postgres";
         password = "3167178829";
     }
     
@@ -31,10 +31,8 @@ public class FachadaBD {
         
         try{
             conexion = DriverManager.getConnection(url, usuario, password);
-            System.out.println("Conexion Exitosa con la Base de datos");
             return conexion;
         }catch (SQLException e){
-            System.out.println("No se pudo conectar la Bases de datos");
              e.printStackTrace();
             return null;
         }

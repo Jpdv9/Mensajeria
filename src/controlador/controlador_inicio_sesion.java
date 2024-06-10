@@ -4,12 +4,15 @@
  */
 package controlador;
 
+import accesoDatos.usuarioDao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import controlador.controlador_menu_cliente;
 import modelos.usuario;
 import vistas.inicio_sesion;
 import vistas.registrarse;
 import vistas.vista_cliente;
+import vistas.vista_mensajero;
 
 
 /**
@@ -17,71 +20,68 @@ import vistas.vista_cliente;
  * @author oberon
  */
 public class controlador_inicio_sesion implements ActionListener{
-    private inicio_sesion InicioSesion;
+    private inicio_sesion inicioSesion;
     private usuario Usuario;
+    private usuarioDao UsuarioDao;
     
-    public controlador_inicio_sesion(inicio_sesion InicioSesion){
-        this.InicioSesion = InicioSesion;
-        Usuario = new usuario();
+    public controlador_inicio_sesion(inicio_sesion inicioSesion){
+        this.inicioSesion = inicioSesion;
+        this.Usuario = new usuario();
+        this.UsuarioDao = new usuarioDao();
         
         
         //Para que los botones se activen y hagan la accion dada.
-        this.InicioSesion.btnIncioSesion.addActionListener(this);
-        this.InicioSesion.btnRegistrar.addActionListener(this);
+        this.inicioSesion.btnIncioSesion.addActionListener(this);
+        this.inicioSesion.btnRegistrar.addActionListener(this);
     }
     
     
     public void iniciar(){
-        InicioSesion.setTitle("Bienvenido");
-        InicioSesion.setLocationRelativeTo(null);
+        inicioSesion.setTitle("Bienvenido");
+        inicioSesion.setLocationRelativeTo(null);
     }
     
 
-    @Override
+   @Override
     public void actionPerformed(ActionEvent e) {
-        
-        // Acciones de los botones
-        // Boton Inciar Sesion
-        
-        if(e.getSource() == InicioSesion.btnIncioSesion){
-            String usuario = InicioSesion.txtUsuario.getText();
-            String contrasena = InicioSesion.txtContrasena.getText();
-            
-            // Prueba para ver si funciona las ventanas
-            
-            if (validarCredenciales(usuario, contrasena)) {
-                // Acciones a realizar si las credenciales son correctas
-                // Si el usuario y contraseña son correctos para lo de abajo
-                InicioSesion.setVisible(false);
-                vista_cliente vistaCliente = new vista_cliente();
-                vistaCliente.setVisible(true);
-                       
+        if (e.getSource() == inicioSesion.btnIncioSesion) {
+            String nombreUsuario = inicioSesion.txtUsuario.getText();
+            String contrasena = inicioSesion.txtContrasena.getText();
+
+            String tipoUsuario = (String) inicioSesion.boxTipoUsuario.getSelectedItem();
+
+            if (UsuarioDao.verificarCredenciales(nombreUsuario, contrasena)) {
+                System.out.println("Inicio de sesión exitoso");
+
+                inicioSesion.setVisible(false);
+
+                if (tipoUsuario.equals("cliente")) {
+                    vista_cliente vistaCliente = new vista_cliente();
+                    controlador_menu_cliente controladorCliente = new controlador_menu_cliente(vistaCliente);
+                    controladorCliente.inicio();
+                    vistaCliente.setVisible(true);
+                } else if (tipoUsuario.equals("mensajero")) {
+                    // Código para abrir la vista del mensajero
+                    vista_mensajero vistaMensajero = new vista_mensajero();
+                    //controlador_menu_cliente controladorCliente = new controlador_menu_cliente(vistaCliente);
+                    //controladorCliente.inicio();
+                    vistaMensajero.setVisible(true);
+                } else {
+                    System.out.println("Tipo de usuario no válido");
+                }
             } else {
-                // Acciones a realizar si las credenciales son incorrectas
-                // Colocar un aviso
                 System.out.println("Usuario o contraseña incorrectos");
             }
-            
-            
         }
-        
-        if(e.getSource() == InicioSesion.btnRegistrar){
-            InicioSesion.setVisible(false);
+
+        if (e.getSource() == inicioSesion.btnRegistrar) {
+            inicioSesion.setVisible(false);
             registrarse Registrarse = new registrarse();
             controlador_registro controladorRegistro = new controlador_registro(Registrarse);
             controladorRegistro.iniciar();
             Registrarse.setVisible(true);
-            }
-            
         }
-    
-        //  Esto se eliminara mas adelante, esto es solo para pruebas...
-        private boolean validarCredenciales(String usuario, String contrasena) {
-        // Lógica de validación de credenciales (por ejemplo, comparar con datos almacenados)
-        // Aquí deberías implementar la validación real
-        return "admin".equals(usuario) && "1234".equals(contrasena);
     }
-
 }
     
 

@@ -4,68 +4,51 @@
  */
 package modelos;
 
-/**
- *
- * @author oberon
- */
 public class mensajero {
     private int idMensajero;
-    private String nombreMensajero;
-    private String emailMensajero;
-    private String direccionMensajero;
-    private String telefonoMensajero;
-    
-    public int getIdMensajero(){
+    private String nombre;
+    private String email;
+    private String direccion;
+    private String telefono;
+
+    // Getters y setters...
+    public int getIdMensajero() {
         return idMensajero;
     }
-    
-    public String getNombreMensajero(){
-        return nombreMensajero;
-    }
-    
-    public String getEmailMensajero(){
-         return emailMensajero;
-    }
-    
-    public String getDireccionMensajero(){
-        return direccionMensajero;
-    }
-    
-    public String getTelefonoMensajero(){
-        return telefonoMensajero;
-    }
-    
-    public void setIdNombre(int idMensajero){
+
+    public void setIdMensajero(int idMensajero) {
         this.idMensajero = idMensajero;
     }
-    
-    public void setNombreMensajero(String nombreMensajero){
-        this.nombreMensajero = nombreMensajero;
+
+    public String getNombre() {
+        return nombre;
     }
-    
-    public void setEmailMensajero(String emailMensajero){
-        this.emailMensajero = emailMensajero;
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
-    
-    public void setDireccionMensajero(String direccionMensajero){
-        this.direccionMensajero = direccionMensajero;
+
+    public String getEmail() {
+        return email;
     }
-    
-    public void setTelefonoMensajero(String telefonoMensajero){
-        this.telefonoMensajero = telefonoMensajero;
+
+    public void setEmail(String email) {
+        this.email = email;
     }
-    
-    
-    @Override
-    public String toString() {
-        return "Mensajero{" +
-                "idCliente=" + idMensajero +
-                ", emailCliente='" + emailMensajero + '\'' +
-                ", nombre='" + nombreMensajero + '\'' +
-                ", direccion='" + direccionMensajero + '\'' +
-                ", email='" + emailMensajero + '\'' +
-                ", telefono='" + telefonoMensajero + '\'' +
-                '}';
+
+    public String getDireccion() {
+        return direccion;
     }
-    
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 }
