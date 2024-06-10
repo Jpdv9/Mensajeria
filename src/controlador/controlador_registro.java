@@ -9,8 +9,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import modelos.usuario;
 import modelos.cliente;
+import modelos.mensajero;
 import accesoDatos.usuarioDao;
 import accesoDatos.clienteDao;
+import accesoDatos.mensajeroDao;
 import vistas.registrarse;
 
 public class controlador_registro implements ActionListener {
@@ -18,11 +20,13 @@ public class controlador_registro implements ActionListener {
     private registrarse Registrarse;
     private usuarioDao UsuarioDao;
     private clienteDao ClienteDao;
+    private mensajeroDao MensajeroDao;
     
     public controlador_registro(registrarse Registrarse) {
         this.Registrarse = Registrarse;
         this.UsuarioDao = new usuarioDao();
         this.ClienteDao = new clienteDao();
+        this.MensajeroDao = new mensajeroDao();
         this.Registrarse.btnRegistrarse.addActionListener(this);
         this.Registrarse.btnCancelar.addActionListener(this);
     }
@@ -49,6 +53,7 @@ public class controlador_registro implements ActionListener {
         String telefono = Registrarse.txtTelefonos.getText();
         String email = Registrarse.txtEmail.getText();
         String nombre = Registrarse.txtNombre.getText();
+        String tipoUsuario = Registrarse.boxTipoUsuario.getSelectedItem().toString();
 
         if (login.isEmpty() || contrasena.isEmpty() || direccion.isEmpty() || telefono.isEmpty() || email.isEmpty() || nombre.isEmpty()) {
             JOptionPane.showMessageDialog(Registrarse, "Por favor, complete todos los campos.");
@@ -76,20 +81,38 @@ public class controlador_registro implements ActionListener {
         Usuario.setTelefono(telefono);
         Usuario.setEmailCliente(email);
 
-        cliente Cliente = new cliente();
-        Cliente.setIdCliente(identificacion);
-        Cliente.setEmailCliente(email);
-        Cliente.setNombre(nombre);
-        Cliente.setDireccion(direccion);
-        Cliente.setTelefono(telefono);
-
         int resultadoUsuario = UsuarioDao.guardarUsuario(Usuario, identificacion);
-        int resultadoCliente = ClienteDao.guardarCliente(Cliente, identificacion);
 
-        if (resultadoUsuario > 0 && resultadoCliente > 0) {
-            JOptionPane.showMessageDialog(Registrarse, "Usuario registrado correctamente.");
-        } else {
-            JOptionPane.showMessageDialog(Registrarse, "Error al registrar el usuario.");
+        if (tipoUsuario.equals("Cliente")) {
+            cliente Cliente = new cliente();
+            Cliente.setIdCliente(identificacion);
+            Cliente.setEmailCliente(email);
+            Cliente.setNombre(nombre);
+            Cliente.setDireccion(direccion);
+            Cliente.setTelefono(telefono);
+
+            int resultadoCliente = ClienteDao.guardarCliente(Cliente, identificacion);
+
+            if (resultadoUsuario > 0 && resultadoCliente > 0) {
+                JOptionPane.showMessageDialog(Registrarse, "Cliente registrado correctamente.");
+            } else {
+                JOptionPane.showMessageDialog(Registrarse, "Error al registrar el cliente.");
+            }
+        } else if (tipoUsuario.equals("Mensajero")) {
+            mensajero Mensajero = new mensajero();
+            Mensajero.setIdMensajero(identificacion);
+            Mensajero.setEmail(email);
+            Mensajero.setNombre(nombre);
+            Mensajero.setDireccion(direccion);
+            Mensajero.setTelefono(telefono);
+
+            int resultadoMensajero = MensajeroDao.guardarMensajero(Mensajero, identificacion);
+
+            if (resultadoUsuario > 0 && resultadoMensajero > 0) {
+                JOptionPane.showMessageDialog(Registrarse, "Mensajero registrado correctamente.");
+            } else {
+                JOptionPane.showMessageDialog(Registrarse, "Error al registrar el mensajero.");
+            }
         }
     }
 

@@ -6,14 +6,14 @@ package vistas;
 
 /**
  *
- * @author oberon
+ * @author jeanp
  */
-public class vista_pedido extends javax.swing.JFrame {
+public class vista_modificar_pedido extends javax.swing.JFrame {
 
     /**
-     * Creates new form vista_pedido
+     * Creates new form vista_modificar_pedido
      */
-    public vista_pedido() {
+    public vista_modificar_pedido() {
         initComponents();
     }
 
@@ -59,20 +59,20 @@ public class vista_pedido extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(vista_pedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vista_modificar_pedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(vista_pedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vista_modificar_pedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(vista_pedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vista_modificar_pedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(vista_pedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vista_modificar_pedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new vista_pedido().setVisible(true);
+                new vista_modificar_pedido().setVisible(true);
             }
         });
     }

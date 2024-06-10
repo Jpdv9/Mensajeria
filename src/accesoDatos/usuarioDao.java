@@ -10,6 +10,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import modelos.*;
 
+/**
+ *
+ * @author jeanp
+ */
+
 public class usuarioDao {
     
     FachadaBD fachada;
@@ -29,11 +34,11 @@ public class usuarioDao {
         pstmt.setString(3, u.getContrasena());
 
         return pstmt.executeUpdate();
-    } catch (SQLException e) {
-        e.printStackTrace(); // Manejar la excepción adecuadamente
+        } catch (SQLException e) {
+            e.printStackTrace(); // Manejar la excepción adecuadamente
+        }
+        return -1;
     }
-    return -1;
-}
 
 
     // CONSULTAR USUARIO

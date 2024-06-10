@@ -5,14 +5,14 @@
         <group>
             <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/accesoDatos/usuarioDao.java</file>
             <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/accesoDatos/clienteDao.java</file>
-            <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/accesoDatos/FachadaBD.java</file>
+            <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/vistas/vista_mensajero.java</file>
             <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/controlador/controlador_menu_cliente.java</file>
+            <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/accesoDatos/mensajeroDao.java</file>
+            <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/controlador/controlador_menu_mensajero.java</file>
             <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/controlador/controlador_registro.java</file>
-            <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/modelos/sucursal.java</file>
-            <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/controlador/Mensajeria.java</file>
-            <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/modelos/usuario.java</file>
-            <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/controlador/controlador_inicio_sesion.java</file>
-            <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/vistas/registrarse.java</file>
+            <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/modelos/cliente.java</file>
+            <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/vistas/vista_cliente.java</file>
+            <file>file:/C:/Users/jeanp/Downloads/NetBeansProjects/NetBeansProjects/Proyecto_Mensajeria/src/modelos/mensajero.java</file>
         </group>
     </open-files>
 </project-private>

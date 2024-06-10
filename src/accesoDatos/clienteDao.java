@@ -7,6 +7,11 @@ package accesoDatos;
 import java.sql.*;
 import modelos.cliente;
 
+/**
+ *
+ * @author jeanp
+ */
+
 public class clienteDao {
     FachadaBD fachada;
     
@@ -56,5 +61,23 @@ public class clienteDao {
             System.out.println(e);
         }
         return null;
+    }
+    
+    public int actualizarCliente(cliente cl) {
+        String sql_update = "UPDATE Cliente SET email_cliente = ?, direccion = ?, ciudad = ?, telefono = ? WHERE id_cliente = ?";
+        
+        try (Connection conn = fachada.openConnection(); 
+             PreparedStatement pstmt = conn.prepareStatement(sql_update)) {
+            pstmt.setString(1, cl.getEmailCliente());
+            pstmt.setString(2, cl.getDireccion());
+            pstmt.setString(3, cl.getCiudad());
+            pstmt.setString(4, cl.getTelefono());
+            pstmt.setInt(5, cl.getIdCliente());
+
+            return pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return -1;
     }
 }

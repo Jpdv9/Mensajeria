@@ -11,7 +11,6 @@ public class mensajero {
     private String direccion;
     private String telefono;
 
-    // Getters y setters...
     public int getIdMensajero() {
         return idMensajero;
     }
