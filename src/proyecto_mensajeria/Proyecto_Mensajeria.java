@@ -12,6 +12,7 @@ import vistas.inicio_sesion;
  * Leonardo Cuadro Lopez - 2241951
  * Jean Paul Davalos - 1832375
  * Juan Felipe Figueroa Serna - 2042033
+ * Miguel Angel Escobar Velez - 2159832
  */
 public class Proyecto_Mensajeria {
 
