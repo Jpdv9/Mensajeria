@@ -1,4 +1,10 @@
--- Eliminar tablas si existen
+
+
+--Leonardo Cuadro Lopez - 2241951
+--Jean Paul Davalos - 1832375
+--Juan Felipe Figueroa Serna - 2042033
+--Cristian Camilo Pinzón Cobo – 2179921
+
 DROP TABLE IF EXISTS Estado_Pedido CASCADE;
 DROP TABLE IF EXISTS Pedido CASCADE;
 DROP TABLE IF EXISTS Sucursal CASCADE;
@@ -70,22 +76,22 @@ CREATE TABLE Estado_Pedido (
     FOREIGN KEY (codigo_pedido) REFERENCES Pedido(codigo_pedido)
 );
 
--- Inserciones de ejemplo
+-- Inserciones de datos
 -- Primero, los usuarios
 INSERT INTO Usuario (login, contrasena) VALUES 
 ('usuario1', 'pass123'), 
 ('usuario2', 'pass456'),
 ('usuario3', 'pass789'),
-('usuario4', 'pass101112');
+('usuario4', 'pass112');
 
--- Después, los clientes y mensajeros
+-- los clientes y mensajeros
 INSERT INTO Cliente (id_usuario, email_cliente, nombre, direccion, ciudad, telefono)
-VALUES (1, 'juan.perez@example.com', 'Juan Perez', 'Calle Falsa 123', 'Ciudad A', '123456789'),
-       (2, 'maria.garcia@example.com', 'Maria Garcia', 'Avenida Siempre Viva 456', 'Ciudad B', '987654321');
+VALUES (1, 'juan.perez@example.com', 'Juan Perez', 'Calle  123', 'Cali', '123456789'),
+       (2, 'maria.garcia@example.com', 'Maria Garcia', 'Avenida  456', 'Palmira', '987654321');
 
 INSERT INTO Mensajero (id_usuario, email_mensajero, nombre, direccion, telefono)
 VALUES (3, 'carlos.mensajero@example.com', 'Carlos Mensajero', 'Avenida Los Angeles 789', '111222333'),
-       (4, 'ana.mensajera@example.com', 'Ana Mensajera', 'Boulevard de la Paz 321', '444555666');
+       (4, 'ana.mensajera@example.com', 'Ana Mensajera', 'Boulevard 321', '444555666');
 
 -- Finalmente, las sucursales, pedidos y estados de pedidos
 INSERT INTO Sucursal (nombre, direccion, telefono, id_cliente)
@@ -102,4 +108,4 @@ VALUES ('En camino', '2024-05-26 10:30:00', 1),
        ('En camino', '2024-05-26 11:30:00', 2),
        ('Entregado', '2024-05-26 13:00:00', 2);
 
-SELECT * FROM usuario NATURAL JOIN cliente;
+
