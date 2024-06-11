@@ -36,13 +36,13 @@ public class mensajeroDao {
 
         return pstmt.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace(); // Manejar la excepción adecuadamente
+            e.printStackTrace(); 
         }
         return -1;
     }
     
-    
-    public mensajero consultarCliente(int idMensajero) {
+    // Consultar Mensajero
+    public mensajero consultarMensajero(int idMensajero) {
         String sql_select = "SELECT * FROM Mensajero WHERE id_mensajero = ?";
         
         try (Connection conn = fachada.openConnection(); 

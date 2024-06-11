@@ -63,7 +63,7 @@ public class usuarioDao {
                 return u;
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Manejar la excepción adecuadamente
+            e.printStackTrace(); 
         }
         return null;
     }
@@ -81,7 +81,7 @@ public class usuarioDao {
                 return rs.getInt(1) > 0;
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Manejar la excepción adecuadamente
+            e.printStackTrace(); 
         }
         return false;
     }

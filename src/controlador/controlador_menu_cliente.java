@@ -46,6 +46,8 @@ public class controlador_menu_cliente implements ActionListener{
         if(e.getSource() == vistaCliente.btnInformacion){
             vistaCliente.setVisible(false);
             vista_informacion_cliente vic = new vista_informacion_cliente();
+            controlador_informacion_cliente cic = new controlador_informacion_cliente(vic);
+            cic.inicio();
             vic.setVisible(true);
         }
         

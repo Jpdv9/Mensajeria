@@ -15,6 +15,11 @@ import accesoDatos.clienteDao;
 import accesoDatos.mensajeroDao;
 import vistas.registrarse;
 
+/**
+ *
+ * @author jeanp
+ */
+
 public class controlador_registro implements ActionListener {
     
     private registrarse Registrarse;
@@ -27,6 +32,8 @@ public class controlador_registro implements ActionListener {
         this.UsuarioDao = new usuarioDao();
         this.ClienteDao = new clienteDao();
         this.MensajeroDao = new mensajeroDao();
+        
+        // Acciones de los botones
         this.Registrarse.btnRegistrarse.addActionListener(this);
         this.Registrarse.btnCancelar.addActionListener(this);
     }

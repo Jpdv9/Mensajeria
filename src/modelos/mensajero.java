@@ -4,6 +4,11 @@
  */
 package modelos;
 
+/**
+ *
+ * @author jeanp
+ */
+
 public class mensajero {
     private int idMensajero;
     private String nombre;

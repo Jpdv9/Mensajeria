@@ -4,6 +4,11 @@
  */
 package modelos;
 
+/**
+ *
+ * @author jeanp
+ */
+
 public class usuario {
     private String login;
     private String contrasena;

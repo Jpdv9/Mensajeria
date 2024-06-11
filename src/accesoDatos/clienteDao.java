@@ -64,7 +64,7 @@ public class clienteDao {
     }
     
     public int actualizarCliente(cliente cl) {
-        String sql_update = "UPDATE Cliente SET email_cliente = ?, direccion = ?, ciudad = ?, telefono = ? WHERE id_cliente = ?";
+        String sql_update = "UPDATE Cliente SET email_cliente = ?, direccion = ?, ciudad = ?, telefono = ? WHERE  = id_usuario?";
         
         try (Connection conn = fachada.openConnection(); 
              PreparedStatement pstmt = conn.prepareStatement(sql_update)) {
